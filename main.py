@@ -1,4 +1,4 @@
-from view import display_menu, register_user, login_user
+from view import display_menu, register_user, login_user, delete_user
 
 
 def main():
@@ -9,6 +9,8 @@ def main():
         elif option == 2:
             login_user()
         elif option == 3:
+            delete_user()
+        elif option == 4:
             break
 
 

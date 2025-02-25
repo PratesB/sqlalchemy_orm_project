@@ -6,7 +6,9 @@ def translate_error_code(code):
         3: "Email exceeds 200 characters.",
         4: "Invalid password length.",
         5: "Email already registered.",
-        6: "Internal system error."
+        6: "Internal system error.",
+        7: "Account not found",
+        8: "Incorrect password"
     }
     return errors.get(code, "Unknown error.")
 
@@ -15,7 +17,8 @@ def display_menu():
     print("\n===========[MENU]===========\n")
     print("Enter 1 to REGISTER")
     print("Enter 2 to LOGIN")
-    print("Enter 3 to EXIT")
+    print("Enter 3 to DELETE USER")
+    print("Enter 4 to EXIT")
     return int(input("Enter your choice: "))
 
 
@@ -40,3 +43,11 @@ def login_user():
         print("Invalid email or password.")
 
 
+def delete_user():
+    email = input("Enter your email: ")
+    password = input("Enter your password: ")
+    result = ControllerDelete.delete_user(email, password)
+    if result == 1:
+        print("User deleted successfully")
+    else:
+        print(translate_error_code(result))

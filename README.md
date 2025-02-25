@@ -43,7 +43,7 @@ pip install -r requirements.txt
 ## Usage
 To run the application, use the following command:
 ```bash
-python view.py
+python main.py
 ```
 
 ## Contributing

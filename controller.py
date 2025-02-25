@@ -74,3 +74,28 @@ class ControllerLogin():
             return False
 
 
+
+class ControllerDelete():
+    @classmethod
+    def delete_user(cls, email, password):
+        session = session_return()
+
+        try:
+            user = session.query(Register).filter(Register.email==email).first()
+            if not user:
+                return 7
+
+
+            password_hash = hashlib.sha256(password.encode()).hexdigest()
+            if user.password != password_hash:
+                return 8
+        
+
+
+            session.delete(user)
+            session.commit()
+            return 1
+        except Exception as e:
+            session.rollback()
+            return 6
+                
