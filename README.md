@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 
 ## Database Configuration
-1.  Create a `.env` file in the project's root directory, based on the provided `.env.example` file.
+1.  Create a `.env` file in the project's root directory.
 2.  Populate the environment variables with your MySQL database credentials:
 
     ```
